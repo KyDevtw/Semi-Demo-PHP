@@ -1,10 +1,10 @@
 <?php
-//require_once('./checkSession.php'); // 引入判斷是否登入機制
+require_once('./checkSession.php'); // 引入判斷是否登入機制
 require_once('./db.inc.php'); // 引用資料庫連線
 
 // SQL 敘述
 $sql = "INSERT INTO `museum` 
-        (`musName`, `musId`,`musImg`) 
+        (`musName`, `musId`,`musimg`) 
         VALUES (?, ?, ?)";
 
 if ($_FILES["musImg"]["error"] === 0) {
