@@ -98,11 +98,11 @@ require_once('./db.inc.php');
                             <div class="row">
                                 <div class="col-lg-6 form-group">
                                     <label class="text-small text-uppercase" for="firstName">美術館名稱</label>
-                                    <input class="form-control form-control-lg"  type="text" name="musId" value="<?php echo $arr[0]['musId']; ?>" maxlength="10">
+                                    <input class="form-control form-control-lg"  type="text" name="musId" value="<?php echo $arr[0]['musName']; ?>" maxlength="10">
                                 </div>
                                 <div class="col-lg-6 form-group">
                                     <label class="text-small text-uppercase">美術館編號</label>
-                                    <input class="form-control form-control-lg" type="text" name="musName" value="<?php echo $arr[0]['musName']; ?>" maxlength="20">
+                                    <input class="form-control form-control-lg" type="text" name="musName" value="<?php echo $arr[0]['musId']; ?>" maxlength="20">
                                 </div>
                                 <div class="col-lg-12 form-group">
                                     <label class="text-small text-uppercase" for="address">上傳圖片</label>

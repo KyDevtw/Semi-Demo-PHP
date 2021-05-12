@@ -138,7 +138,7 @@ require_once './db.inc.php';
           $arr = $stmt->fetchAll();
           for ($i = 0; $i < count($arr); $i++) {
         ?>
-            <div class="col-md-6 mb-4 mb-md-0 py-3 px-5"><a class="category-item" href="./musDetail.php?itemId=<?php echo $arr[$i]['musId'] ?>"><img class="img-fluid musPic" src="./images/<?php echo $arr[$i]['musImg'] ?>" alt=""><strong><?php echo $arr[$i]['musName'] ?><a class="text-muted font-weight-normal" href="./edit.php?editId=<?php echo $arr[$i]['id']; ?>">編輯 |</a><a class="text-muted font-weight-normal" href="./delete.php?id=<?php echo $arr[$i]['id']; ?>"> 刪除</a></strong></a></div>
+            <div class="col-md-6 mb-4 mb-md-0 py-3 px-5"><a class="category-item" href="./musDetail.php?itemId=<?php echo $arr[$i]['musName'] ?>"><img class="img-fluid musPic" src="./images/<?php echo $arr[$i]['musImg'] ?>" alt=""><strong><?php echo $arr[$i]['musName'] ?><a class="text-muted font-weight-normal" href="./edit.php?editId=<?php echo $arr[$i]['id']; ?>">編輯 |</a><a class="text-muted font-weight-normal" href="./delete.php?id=<?php echo $arr[$i]['id']; ?>"> 刪除</a></strong></a></div>
         <?php
           }
         }
