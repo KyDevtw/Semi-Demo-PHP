@@ -15,7 +15,7 @@ $count =0;
 
 //FIND_IN_SET() 會給予字串在字串列中的位置
 //先查詢出所有 id 資料欄位中的大頭貼檔案名稱
-$sqlGetImg = "SELECT `aucImg`FROM `items`WHERE FIND_IN_SET(`id`,?)";
+$sqlGetImg = "SELECT `aucImg`FROM `auctionitems`WHERE FIND_IN_SET(`id`,?)";
 //加上跳脫字元 並執行
 $stmtGetImg = $pdo->prepare($sqlGetImg);
 $stmtGetImg->execute([$strIds]);
@@ -33,7 +33,7 @@ if($stmtGetImg->rowCount()>0){
 }
 
     //刪除的sql語法
-    $sqlDelete = "DELETE FROM `items`WHERE FIND_IN_SET(`id`,?)";
+    $sqlDelete = "DELETE FROM `auctionitems`WHERE FIND_IN_SET(`id`,?)";
     //加上跳脫字元 並執行
     $stmtDelte = $pdo->prepare($sqlDelete);
     $stmtDelte->execute([$strIds]);

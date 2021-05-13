@@ -12,7 +12,7 @@ $objResponse['info'] = "沒有任何更新";
 $arrParam=[];
 
 //先加寫sql前面開頭的部分
-$sql="UPDATE `items` SET";
+$sql="UPDATE `auctionitems` SET";
 
 //itemName SQL 語句和資料繫結的部分補上
 $sql.= "`aucName` = ?,

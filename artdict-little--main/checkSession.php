@@ -8,6 +8,6 @@ if(!isset($_SESSION['username'])){
     session_destroy();
 
     //回到登入頁面
-    header('Location:../loginPage.php');
+    header('Refresh:1; url=../loginpage.php');
     exit();
 }

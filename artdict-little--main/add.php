@@ -38,13 +38,14 @@ if( $_FILES["aucImg"]["error"] === 0 ) {
 }
 
 // SQL
-$sql ="INSERT INTO `items` (`aucName`,`aucClass`, `aucQty`,`aucDes`,`aucPriceStart`,`aucImg`) VALUES (?,?,?,?,?,?)";
+$sql = "INSERT INTO `auctionitems` (`aucName`,`aucClass`, `aucQty`,`aucDes`,`aucPriceStart`,`aucPriceNow`,`aucImg`) VALUES (?,?,?,?,?,?,?)";
 
 $arrParam = [
     $_POST['aucName'],
     $_POST['itemCategoryId'],
     $_POST['aucQty'],
     $_POST['aucDes'],
+    $_POST['aucPriceStart'],
     $_POST['aucPriceStart'],
     $imgFileName,
 ];
