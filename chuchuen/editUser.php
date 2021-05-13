@@ -109,10 +109,7 @@ require_once './checkSession.php';
                         ?>
 
                     </tbody>
-
-
                 </table>
-                <input type="text" name="userMail" value="<?php echo $_GET['userId'] ?>" hidden>
             </form>
         </div>
 
