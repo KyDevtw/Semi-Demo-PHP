@@ -39,7 +39,7 @@ $arr = [
 $stmt = $pdo->prepare($sql);
 $stmt->execute($arr);
 if ($stmt->rowCount() > 0) {
-    header("Location: ./index.php");
+    header("Location: ./musList.php");
     echo "新增成功";
 } else {
     header("Refresh: 3; url=./addMus.php");
