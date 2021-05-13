@@ -34,7 +34,7 @@
             <div class="col-md-4">
                 <h6 class="text-uppercase mb-3">購物車功能</h6>
                 <ul class="list-unstyled mb-5">
-                    <li><a class="footer-link" href="../PHP-project-Gary/admin.php">Gary</a></li>
+                    <li><a class="footer-link" href="../PHP-project-Gary/shop-admin.php">Gary</a></li>
                 </ul>
             </div>
         </div>

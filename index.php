@@ -165,7 +165,7 @@ session_start();
 
           <div class="col-md-6 mb-4 mb-md-0 py-3 px-3">
             <span class="category-item" href="./PHP-project-Gary/admin.php">
-              <a href="./PHP-project-Gary/admin.php">
+              <a href="./PHP-project-Gary/shop-admin.php">
                 <img class="img-fluid mb-3 grayscale" src="./images/005_cart.png" alt="">
                 <strong>購物車功能</strong>
               </a>
