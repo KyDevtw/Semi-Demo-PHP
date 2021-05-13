@@ -33,7 +33,7 @@ if ($_FILES["itemImg"]["error"] === 0) {
     $itemImg = $strDatetime . "." . $extension;
 
     //若上傳成功 (有夾帶檔案上傳)，則將上傳檔案從暫存資料夾，移動到指定的資料夾或路徑
-    if (move_uploaded_file($_FILES["itemImg"]["tmp_name"], "../images/items/{$itemImg}")) {
+    if (move_uploaded_file($_FILES["itemImg"]["tmp_name"], "./images/items/{$itemImg}")) {
         //先查詢出特定 id (itemId) 資料欄位中的大頭貼檔案名稱
         $sqlGetImg = "SELECT `itemImg` FROM `items` WHERE `itemId` = ? ";
         $stmtGetImg = $pdo->prepare($sqlGetImg);
