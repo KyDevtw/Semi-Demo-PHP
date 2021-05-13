@@ -18,9 +18,9 @@ if ($stmtGetImg->rowCount() > 0) {
     $arrImg = $stmtGetImg->fetchAll();
 
 
-    if ($arrImg['userImg'] !== NULL) {
+    if ($arrImg[0]['userImg'] !== NULL) {
 
-        @unlink("./images/" . $arrImg['userImg']);
+        @unlink("./images/" . $arrImg[0]['userImg']);
     }
 }
 
