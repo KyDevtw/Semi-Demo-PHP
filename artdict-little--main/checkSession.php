@@ -8,7 +8,6 @@ if(!isset($_SESSION['username'])){
     session_destroy();
 
     //回到登入頁面
-    header('Refresh:1; url=./index.php');
-    echo "請確實登入頁面,3秒後自動跳轉";
+    header('Location:../loginPage.php');
     exit();
 }

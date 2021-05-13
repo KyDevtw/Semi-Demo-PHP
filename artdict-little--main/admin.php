@@ -127,7 +127,7 @@ $page = $page < 1 ? 1 : $page;
 
 
                                 $sql = "SELECT `i`.`id`,`i`.`aucClass`,`i`.`aucName`,`i`.`aucQty`,`i`.`aucDes`,`i`.`aucId`,`i`.`aucPriceStart`,`i`.`aucPriceNow`,`i`.`aucImg`,`i`.`created_at`,`i`.`updated_at`
-                                FROM `items`AS `i` INNER JOIN `categories`
+                                FROM `auctionitems`AS `i` INNER JOIN `categories`
                                 ON `i`.`aucClass` = `categories`.`categoryId`";
 
                                 if (isset($_GET['categoryId']) && !isset($_GET['search'])) {

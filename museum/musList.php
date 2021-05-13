@@ -1,5 +1,5 @@
 <?php
-//require_once './checkSession.php';
+require_once './checkSession.php';
 require_once('./db.inc.php');
 ?>
 
@@ -17,11 +17,11 @@ require_once('./db.inc.php');
     require_once './template/linkTemplate.php';
     ?>
     <style>
-    .musPic{
-        width:800px;
-        height:400px;
-    }
-  </style>
+        .musPic {
+            width: 800px;
+            height: 400px;
+        }
+    </style>
 </head>
 
 <body>
@@ -104,7 +104,7 @@ require_once('./db.inc.php');
             </header>
             <!-- 測試區 -->
             <div class="row">
-                    <?php
+                <?php
                 // SQL 敘述
                 $sql = "SELECT `id`, `musName`,`musImg`,`musId`
                         FROM `museum` 
@@ -113,12 +113,12 @@ require_once('./db.inc.php');
                 $stmt = $pdo->query($sql);
 
                 if ($stmt->rowCount() > 0) {
-                $arr = $stmt->fetchAll();
-                for ($i = 0; $i < count($arr); $i++) {
+                    $arr = $stmt->fetchAll();
+                    for ($i = 0; $i < count($arr); $i++) {
                 ?>
-                    <div class="col-md-6 mb-4 mb-md-0 py-3 px-5"><a class="category-item" href="./musDetail.php?itemId=<?php echo $arr[$i]['musId'] ?>"><img class="img-fluid musPic" src="./images/<?php echo $arr[$i]['musImg'] ?>" alt=""><strong><?php echo $arr[$i]['musName'] ?><a class="text-muted font-weight-normal" href="./edit.php?editId=<?php echo $arr[$i]['id']; ?>">編輯 |</a><a class="text-muted font-weight-normal" href="./delete.php?id=<?php echo $arr[$i]['id']; ?>"> 刪除</a></strong></a></div>
+                        <div class="col-md-6 mb-4 mb-md-0 py-3 px-5"><a class="category-item" href="./musDetail.php?itemId=<?php echo $arr[$i]['musId'] ?>"><img class="img-fluid musPic" src="./images/<?php echo $arr[$i]['musImg'] ?>" alt=""><strong><?php echo $arr[$i]['musName'] ?><a class="text-muted font-weight-normal" href="./edit.php?editId=<?php echo $arr[$i]['id']; ?>">編輯 |</a><a class="text-muted font-weight-normal" href="./delete.php?id=<?php echo $arr[$i]['id']; ?>"> 刪除</a></strong></a></div>
                 <?php
-                }
+                    }
                 }
                 ?>
             </div>
@@ -127,44 +127,54 @@ require_once('./db.inc.php');
                 <div class="container py-4">
                     <div class="row py-5">
                         <div class="col-md-4 mb-3 mb-md-0">
-                            <h6 class="text-uppercase mb-3">Customer services</h6>
-                            <ul class="list-unstyled mb-0">
-                                <li><a class="footer-link" href="#">Help &amp; Contact Us</a></li>
-                                <li><a class="footer-link" href="#">Returns &amp; Refunds</a></li>
-                                <li><a class="footer-link" href="#">Online Stores</a></li>
-                                <li><a class="footer-link" href="#">Terms &amp; Conditions</a></li>
+                            <h6 class="text-uppercase mb-3">藝術博物館</h6>
+                            <ul class="list-unstyled mb-5">
+                                <li><a class="footer-link" href="../museum/">Josie</a></li>
                             </ul>
                         </div>
                         <div class="col-md-4 mb-3 mb-md-0">
-                            <h6 class="text-uppercase mb-3">Company</h6>
+                            <h6 class="text-uppercase mb-3">商品列表</h6>
                             <ul class="list-unstyled mb-0">
-                                <li><a class="footer-link" href="#">What We Do</a></li>
-                                <li><a class="footer-link" href="#">Available Services</a></li>
-                                <li><a class="footer-link" href="#">Latest Posts</a></li>
-                                <li><a class="footer-link" href="#">FAQs</a></li>
+                                <li><a class="footer-link" href="../Jeffrey-work/">Jeffrey</a></li>
                             </ul>
                         </div>
                         <div class="col-md-4">
-                            <h6 class="text-uppercase mb-3">Social media</h6>
-                            <ul class="list-unstyled mb-0">
-                                <li><a class="footer-link" href="#">Twitter</a></li>
-                                <li><a class="footer-link" href="#">Instagram</a></li>
-                                <li><a class="footer-link" href="#">Tumblr</a></li>
-                                <li><a class="footer-link" href="#">Pinterest</a></li>
+                            <h6 class="text-uppercase mb-3">展覽工作坊</h6>
+                            <ul class="list-unstyled mb-5">
+                                <li><a class="footer-link" href="../event/">Kurt</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <h6 class="text-uppercase mb-3">競標拍賣</h6>
+                            <ul class="list-unstyled mb-5">
+                                <li><a class="footer-link" href="../artdict-little--main/">劉暢</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <h6 class="text-uppercase mb-3">會員中心</h6>
+                            <ul class="list-unstyled mb-5">
+                                <li><a class="footer-link" href="../chuchuen/">竹君</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="text-uppercase mb-3">購物車功能</h6>
+                            <ul class="list-unstyled mb-5">
+                                <li><a class="footer-link" href="../PHP-project-Gary/">Gary</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="border-top pt-4" style="border-color: #1d1d1d !important">
                         <div class="row">
                             <div class="col-lg-6">
-                                <p class="small text-muted mb-0">&copy; 2020 All rights reserved.</p>
+                                <p class="small text-muted mb-0">&copy; 2021 All rights reserved.</p>
                             </div>
                             <div class="col-lg-6 text-lg-right">
-                                <p class="small text-muted mb-0">Template designed by <a class="text-white reset-anchor" href="https://bootstraptemple.com/p/bootstrap-ecommerce">Bootstrap Temple</a></p>
+                                <p class="small text-muted mb-0">Ddesigned by ARTDDICT</p>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </footer>
             <!-- JavaScript files-->
             <script src="vendor/jquery/jquery.min.js"></script>

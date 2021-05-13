@@ -1,28 +1,3 @@
-<?php
-require_once './db.inc.php';
-/**
- * 執行 SQL 語法,取得 items 資料表總筆數,並回傳,建立 PDOstatment 物件
- * 查詢結果,取得第一筆資料(索引為 0),資料表總筆數
- */
-$total =  $pdo->query("SELECT COUNT(eventId) AS `count` FROM `event`")->fetchAll()[0]['count'];
-
-// 每頁幾筆
-$numPerPage = 4;
-
-// 總頁數,ceil()為無條件進位
-$totalPages = ceil($total / $numPerPage);
-
-// 目前第幾頁
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-
-// 若 page 小於 1,則回傳 1
-$page = $page < 1 ? 1 : $page;
-$page = $page > $totalPages ? $totalPages : $page;
-
-
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -36,12 +11,27 @@ $page = $page > $totalPages ? $totalPages : $page;
   <?php
   require_once './template/linkTemplate.php';
   ?>
+  <style>
+    .grayscale {
+      -webkit-filter: grayscale(95%);
+      -moz-filter: grayscale(95%);
+      -ms-filter: grayscale(95%);
+      -o-filter: grayscale(95%);
+    }
+
+    .grayscale:hover {
+      -webkit-filter: grayscale(0);
+      -moz-filter: grayscale(0);
+      -ms-filter: grayscale(0);
+      -o-filter: grayscale(0);
+    }
+  </style>
 </head>
 
 <body>
   <div class="page-holder">
     <!-- navbar-->
-    <header class="header bg-white">
+    <header class="header bg-white shadow-sm">
       <div class="container px-0 px-lg-3">
         <nav class="navbar navbar-expand-lg navbar-light py-3 px-lg-0"><a class="navbar-brand" href="index.php"><span class="font-weight-bold text-uppercase text-dark">ARTDDICT</span></a>
 
@@ -57,8 +47,20 @@ $page = $page > $totalPages ? $totalPages : $page;
               </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><span class="nav-link" href="cart.html"> <i class="fas fa-dolly-flatbed mr-1 text-white"></i></span></li>
-              <li class="nav-item"><a class="nav-link" href="./loginPage.php"> <i class="fas fa-user-alt mr-1 text-gray"></i>Login</a></li>
+              <?php
+              if (!isset($_SESSION['username'])) {
+              ?>
+                <li class="nav-item"><span class="nav-link" href="cart.html"> <i class="fas fa-dolly-flatbed mr-1 text-white"></i></span></li>
+                <li class="nav-item"><a class="nav-link" href="./loginPage.php"> <i class="fas fa-user-alt mr-1 text-grey"></i>Login</a></li>
+              <?php
+              } else {
+              ?>
+                <li class="nav-item"><span class="nav-link" href="cart.html"> <i class="fas fa-dolly-flatbed mr-1 text-white"></i></span></li>
+                <li class="nav-item"><a class="nav-link" href="./logout.php"> <i class="fas fa-user-alt mr-1 text-grey"></i>Logout</a></li>
+
+              <?php
+              }
+              ?>
             </ul>
           </div>
         </nav>
@@ -112,58 +114,58 @@ $page = $page > $totalPages ? $totalPages : $page;
       <div class="container mb-5">
         <div class="row">
 
-          <div class="col-md-6 mb-4 mb-md-0 py-3">
-            <span class="category-item" href="./museum/">
-              <a href="./museum/">
-                <img class="img-fluid mb-3" src="./images/004.jpg" alt="">
-                <strong>視覺首頁</strong>
+          <div class="col-md-6 mb-4 mb-md-0 py-3 px-3">
+            <span class="category-item" href="./museum/musList.php">
+              <a href="./museum/musList.php">
+                <img class="img-fluid mb-3 grayscale" src="./images/005_museum.png" alt="">
+                <strong>藝術博物館</strong>
               </a>
             </span>
           </div>
 
-          <div class="col-md-6 mb-4 mb-md-0 py-3">
-            <a href="./Jeffrey-work/">
-              <span class="category-item" href="./Jeffrey-work/">
-                <img class="img-fluid mb-3" src="./images/004.jpg" alt="">
+          <div class="col-md-6 mb-4 mb-md-0 py-3 px-3">
+            <span class="category-item" href="./Jeffrey-work/eventList.php">
+              <a href="./Jeffrey-work/eventList.php">
+                <img class="img-fluid mb-3 grayscale" src="./images/005_product.png" alt="">
                 <strong>商品列表</strong>
-              </span>
-            </a>
+              </a>
+            </span>
           </div>
 
-          <div class="col-md-6 mb-4 mb-md-0 py-3">
-            <a href="./event/">
-              <span class="category-item" href="./event/">
-                <img class="img-fluid mb-3" src="./images/004.jpg" alt="">
+          <div class="col-md-6 mb-4 mb-md-0 py-3 px-3">
+            <span class="category-item" href="./event/eventList.php">
+              <a href="./event/eventList.php">
+                <img class="img-fluid mb-3 grayscale" src="./images/005_exhibition.png" alt="">
                 <strong>展覽工作坊</strong>
-              </span>
-            </a>
+              </a>
+            </span>
           </div>
 
-          <div class="col-md-6 mb-4 mb-md-0 py-3">
-            <a href="./artdict-little--main/">
-              <span class="category-item" href="./artdict-little--main/">
-                <img class="img-fluid mb-3" src="./images/004.jpg" alt="">
+          <div class="col-md-6 mb-4 mb-md-0 py-3 px-3">
+            <span class="category-item" href="./artdict-little--main/admin.php">
+              <a href="./artdict-little--main/admin.php">
+                <img class="img-fluid mb-3 grayscale" src="./images/005_auction.png" alt="">
                 <strong>競標拍賣</strong>
-              </span>
-            </a>
+              </a>
+            </span>
           </div>
 
-          <div class="col-md-6 mb-4 mb-md-0 py-3">
-            <a href="./chuchuen/">
-              <span class="category-item" href="./chuchuen/">
-                <img class="img-fluid mb-3" src="./images/004.jpg" alt="">
+          <div class="col-md-6 mb-4 mb-md-0 py-3 px-3">
+            <span class="category-item" href="./chuchuen/">
+              <a href="./chuchuen/">
+                <img class="img-fluid mb-3 grayscale" src="./images/005_member.png" alt="">
                 <strong>會員中心</strong>
-              </span>
-            </a>
+              </a>
+            </span>
           </div>
 
-          <div class="col-md-6 mb-4 mb-md-0 py-3">
-            <a href="./PHP-project-Gary/">
-              <span class="category-item" href="./PHP-project-Gary/">
-                <img class="img-fluid mb-3" src="./images/004.jpg" alt="">
+          <div class="col-md-6 mb-4 mb-md-0 py-3 px-3">
+            <span class="category-item" href="./PHP-project-Gary/admin.php">
+              <a href="./PHP-project-Gary/admin.php">
+                <img class="img-fluid mb-3 grayscale" src="./images/005_cart.png" alt="">
                 <strong>購物車功能</strong>
-              </span>
-            </a>
+              </a>
+            </span>
           </div>
 
 

@@ -7,6 +7,6 @@ if( !isset($_SESSION['username']) ) {
     session_destroy();
     
     //3 秒後跳頁
-    header("Location:./loginPage.php");
+    header("Location:../loginPage.php");
     exit();
 }
