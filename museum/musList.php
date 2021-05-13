@@ -16,12 +16,6 @@ require_once('./db.inc.php');
     <?php
     require_once './template/linkTemplate.php';
     ?>
-    <style>
-        .musPic {
-            width: 800px;
-            height: 400px;
-        }
-    </style>
 </head>
 
 <body>
