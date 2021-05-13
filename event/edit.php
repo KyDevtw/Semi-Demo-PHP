@@ -88,15 +88,12 @@ require_once('./db.inc.php');
                                     </div>
                                     <div class=" col-lg-12 form-group">
                                         <label class="text-small text-uppercase">上傳圖片</label>
-                                        <?php if ($arr['eventImg'] !== NULL) { ?>
-                                            <img class="w200px" src="./images/<?php echo $arr['eventImg'] ?>" />
-                                        <?php } ?>
                                         <input class="form-control form-control-lg" type="file" name="eventImg">
                                     </div>
 
                                     <div class="col-lg-12 form-group">
                                         <input type="hidden" name="id" value="<?php echo (int)$_GET['id'] ?>">
-                                        <input class="btn btn-dark" type="submit" name="smb" value="建立">
+                                        <input class="btn btn-dark" type="submit" name="smb" value="更新">
                                     </div>
                                 </div>
                             </form>
