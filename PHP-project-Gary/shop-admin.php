@@ -163,6 +163,6 @@ require_once("./func-getRecursiveCategoryIds.php");
 
 
 <?php
-require_once('./BS-footer.php');
+require_once('./template/footer.php');
 require_once('./BS-html-foot.php');
 ?>

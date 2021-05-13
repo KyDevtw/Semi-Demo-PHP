@@ -6,7 +6,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <!-- Link--><a class="nav-link" href="admin.php">首頁</a>
+                        <!-- Link--><a class="nav-link" href=".//index.php"/a>
                     </li>
                     <li class="nav-item">
                         <!-- Link--><a class="nav-link" href="shop-admin.php">商店</a>
