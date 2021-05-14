@@ -110,7 +110,7 @@ $page = $page > $totalPages ? $totalPages : $page;
                         $arr = $stmt->fetchAll();
                         for ($i = 0; $i < count($arr); $i++) {
                     ?>
-                            <div class="col-md-3 mb-4 mb-md-0 py-3 px-5"><a class="category-item" href="./eventDetail.php?itemId=<?php echo $arr[$i]['proId'] ?>">
+                            <div class="col-md-3 mb-4 mb-md-0 py-3 px-5"><a class="category-item" href="./eventDetail.php?proId=<?php echo $arr[$i]['proId']?>&username=<?php echo $_SESSION['username'] ?>">
                                     <img class="img-fluid" src="./images/<?php echo $arr[$i]['proImg'] ?>" alt="">
                                     <div style="width: 100%; text-align: center;">
                                         <strong><?php echo $arr[$i]['proName'] ?>

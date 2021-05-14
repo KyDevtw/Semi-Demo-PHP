@@ -16,6 +16,11 @@ require_once './checkSession.php';
             width: 200px;
         }
     </style>
+    <script type="text/javascript">
+        function display_alert()  {
+            alert("確定要刪除帳號？")
+        }
+    </script>
 </head>
 
 <body>
@@ -56,7 +61,7 @@ require_once './checkSession.php';
                         ?>
                             <div class="container" style="padding-left: 100px;">
                                 <div class="col-lg-6 form-group">
-                                    <a href="./deleteUser.php">刪除帳號</a>
+                                    <a href="./deleteUser.php" onclick="display_alert()">刪除帳號</a>
                                 </div>
                                 <div class="col-lg-6 form-group">
                                     <label class="text-small text-uppercase">更換大頭貼</label><br>

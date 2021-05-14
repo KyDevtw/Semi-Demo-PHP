@@ -44,9 +44,9 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute($arrParam);
 
 if ($stmt->rowCount() > 0) {
-    header("Refresh: 1; url=./index.php");
+    header("Refresh: 1; url=./musList.php");
     echo "刪除成功";
 } else {
-    header("Refresh: 1; url=./index.php");
+    header("Refresh: 1; url=./musList.php");
     echo "刪除失敗";
 }

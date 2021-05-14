@@ -71,10 +71,10 @@ require_once('./db.inc.php');
                         <img src="./images/003.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="./images/104.jpg" class="d-block w-100" alt="...">
+                        <img src="./images/004.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="./images/101.jpg" class="d-block w-100" alt="...">
+                        <img src="./images/005.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
                         <img src="./images/002.jpg" class="d-block w-100" alt="...">
@@ -97,24 +97,24 @@ require_once('./db.inc.php');
                 <h2 class="h5 text-uppercase mb-4">美術館清單</h2>
             </header>
             <!-- 測試區 -->
-            <div class="row">
-                <?php
-                // SQL 敘述
-                $sql = "SELECT `id`, `musName`,`musImg`,`musId`
-                        FROM `museum` 
-                        ORDER BY `id` ASC";
-
-                $stmt = $pdo->query($sql);
-
-                if ($stmt->rowCount() > 0) {
-                    $arr = $stmt->fetchAll();
-                    for ($i = 0; $i < count($arr); $i++) {
-                ?>
-                        <div class="col-md-6 mb-4 mb-md-0 py-3 px-5"><a class="category-item" href="./musDetail.php?itemId=<?php echo $arr[$i]['musId'] ?>"><img class="img-fluid musPic" src="./images/<?php echo $arr[$i]['musImg'] ?>" alt=""><strong class="col-md-6 mb-4 mb-md-0 py-3 px-5" ><?php echo $arr[$i]['musName'] ?><a class="text-muted font-weight-normal" href="./edit.php?editId=<?php echo $arr[$i]['id']; ?>">編輯 |</a><a class="text-muted font-weight-normal" href="./delete.php?id=<?php echo $arr[$i]['id']; ?>"> 刪除</a></strong></a></div>
-                <?php
+            <div class="container">
+                <div class="row">
+                    <?php
+                    // SQL 敘述
+                    $sql = "SELECT `id`, `musName`,`musImg`,`musId`
+                            FROM `museum`
+                            ORDER BY `id` ASC";
+                    $stmt = $pdo->query($sql);
+                    if ($stmt->rowCount() > 0) {
+                        $arr = $stmt->fetchAll();
+                        for ($i = 0; $i < count($arr); $i++) {
+                    ?>
+                            <div class="col-md-6 mb-4 mb-md-0 py-3 px-5"><a class="category-item" href="./musDetail.php?itemId=<?php echo $arr[$i]['musId'] ?>"><img class="img-fluid musPic" src="./images/<?php echo $arr[$i]['musImg'] ?>" alt=""><strong class="col-md-6 mb-4 mb-md-0 py-3 px-5" ><?php echo $arr[$i]['musName'] ?><a class="text-muted font-weight-normal" href="./edit.php?editId=<?php echo $arr[$i]['id']; ?>">編輯 |</a><a class="text-muted font-weight-normal" href="./delete.php?id=<?php echo $arr[$i]['id']; ?>"> 刪除</a></strong></a></div>
+                    <?php
+                        }
                     }
-                }
-                ?>
+                    ?>
+                </div>
             </div>
             <!-- 測試區 -->
             <?php
