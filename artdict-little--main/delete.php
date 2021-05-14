@@ -13,7 +13,7 @@ header("Refresh: 1; url=./admin.php");
 //刪除商品類別
 if(isset($_GET['id'])){
     //刪掉那個categoryId 是deleteCategoryId的商品
-    $sql="DELETE FROM `items` WHERE `id` =?";
+    $sql="DELETE FROM `auctionitems` WHERE `id` =?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([(int)$_GET['id']]);
     if($stmt->rowCount() > 0) {
