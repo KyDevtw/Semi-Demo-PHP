@@ -227,7 +227,7 @@ $cityFilter = isset($_GET['city']) ? '?city=' . $_GET['city'] . '&'  : "?";
             <nav class="my-5" aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
                     <?php
-                    if ($stmt->rowCount() > 3) {
+                    if ($totalPages > 3) {
                     ?>
                         <li class="page-item">
                             <a class="page-link" href="<?php echo $cityFilter ?>page=1#EventList" tabindex="-1">第一頁</a>
@@ -243,7 +243,7 @@ $cityFilter = isset($_GET['city']) ? '?city=' . $_GET['city'] . '&'  : "?";
                         </li>
                     <?php } ?>
                     <?php
-                    if ($stmt->rowCount() > 3) {
+                    if ($totalPages > 3) {
                     ?>
                         <li class="page-item">
                             <a class="page-link" href="<?php echo $cityFilter ?>page=<?php echo (int)$totalPages ?> #EventList">最底頁</a>

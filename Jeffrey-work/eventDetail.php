@@ -48,7 +48,7 @@ require_once './template/modal.php';
                 if ($stmt->rowCount() > 0) {
                     $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
             ?>
-                    <div class="container" style="margin-left: 100px;">
+                    <div class="container" style="margin-left: 22%;">
                         <div class="row">
                             <div class="col-md-5">
                                 <div class="row mb-3 d-flex justify-content-center">
@@ -180,7 +180,7 @@ require_once './template/modal.php';
                         <!-- comments -->
                 
                         <div class="table-responsive">
-                            <form name="myForm" method="POST" action="./insertComments.php" class="col-12" style="padding: 2px;">
+                            <form name="myForm" method="POST" action="./insertComments.php" class="col-12" style="padding: 2px; width:1500px;">
                                 <table class="table">
                                     <thead class="thead-dark">
                                         <tr>
@@ -217,7 +217,7 @@ require_once './template/modal.php';
 
 
                                             <td class="border">
-                                                <textarea style="width: 715px;" name="content" value="" rows="10" cols="50"></textarea>
+                                                <textarea style="width: 650px;" name="content" value="" rows="10" cols="50"></textarea>
                                             </td>
 
                                             <td class="border">
